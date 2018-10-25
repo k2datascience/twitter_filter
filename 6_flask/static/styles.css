@@ -1,0 +1,28 @@
+body {
+  margin-top: 50px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.lrg-heading {
+  font-size: 48px;
+}
+
+.description {
+  font-size: 24px;
+  color: gray;
+}
+
+.brand {
+  color: yellow;
+}
+
+.positive {
+  border: 1px solid rgba(0,164,0,.8)
+}
+
+.negative {
+  border: 1px solid rgba(164,0,0,.8)
+}

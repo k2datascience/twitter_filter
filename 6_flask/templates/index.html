@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>DTC-Twitter Filter</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row mb-5">
+        <div class="col text-center">
+          <h1 class="mb-3">
+            DTC-Twitter Filter
+          </h1>
+          <h4 class="mb-2">
+            <small class="text-muted">
+              Monitoring Warby Parker, Bonobos, Casper, Glossier, Dollar Shave Club and Allbirds
+            </small>
+          </h4>
+        </div>
+      </div>
+
+      {% for tweet in tweets %}
+        <div class="row my-4">
+          <div class="col">
+            <div class="card {{ 'positive' if tweet.data.polarity > 0 }} {{ 'negative' if tweet.data.polarity < 0 }}">
+              <div class="card-body">
+                <p class="card-text">
+                  {{ tweet.filtered_text()|safe }}
+                </p>
+                <br />
+                <div class="card-text">
+                  <img alt="{{ tweet.data.username }}" height="48" src="{{ tweet.data.profile_image_url }}" width="48" class="mr-3"/>
+                  {{ tweet.data.name }} (<a href="{{ tweet.user_link() }}" target="_blank">{{ tweet.data.username }}</a>)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="text-center mb-4">
+        <a class="btn btn-primary" href="/" role="button">Refresh</a>
+      </div>
+
+
+    </div>
+  </body>
+</html>
