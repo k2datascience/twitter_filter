@@ -1,4 +1,4 @@
-# Blogging Analytics Dashboard
+# Streaming Twitter Filter
 
 Companion code for the tutorial series about building a streaming Twitter filter using Python and Redis.
 
