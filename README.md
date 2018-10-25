@@ -1,6 +1,6 @@
 # Blogging Analytics Dashboard
 
-Companion code for the tutorial series about building an analytics dashboard for a blog.
+Companion code for the tutorial series about building a streaming Twitter filter using Python and Redis.
 
 - [Udemy Course (free - coming soon)]()
 - [YouTube Playlist (coming soon)]()
